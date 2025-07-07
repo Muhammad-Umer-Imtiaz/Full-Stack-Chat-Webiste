@@ -10,6 +10,6 @@ import upload from "../Middleware/uploadMiddleware.js";
 const router = express.Router();
 
 router.get("/user", isAuthenticated, getUSerForSidebar);
-router.get("/:id", isAuthenticated, getMessages); //here i get all messages
 router.post("/sendmessage/:id",isAuthenticated,upload.array("image",5),sendMessages);
+router.get("/:id", isAuthenticated, getMessages); //here i get all messages
 export default router;
