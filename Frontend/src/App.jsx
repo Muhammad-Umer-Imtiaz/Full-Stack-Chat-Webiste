@@ -6,7 +6,7 @@ import Signup from './Pages/Signup'
 import Navbar from './Components/Navbar'
 import SettingsPage from './Pages/SettingPage'
 import ProfilePage from './Pages/ProfilePage'
-import { useAuthStore } from './store/useAuthStore'
+import { useAuthStore } from './store/useAuthStore.js'
 import { Loader } from "lucide-react"
 import { Toaster } from "react-hot-toast"
 import UpdatePassword from './Pages/UpdatePassword'
