@@ -1,5 +1,5 @@
 import { FiSettings, FiLogOut, FiUser } from "react-icons/fi";
-import { useAuthStore } from "../store/useAuthStore.js";
+import { useAuthStore } from "../Store/useAuthStore.js";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logo from "../assets/logo.png";
@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     if (isLoggingOut) return; // Prevent multiple clicks
-    
+
     setIsLoggingOut(true);
     try {
       const success = await logout();
@@ -51,8 +51,8 @@ const Navbar = () => {
               onClick={handleLogout}
               disabled={isLoggingOut}
               className={`flex items-center space-x-2 transition-colors duration-200
-                ${isLoggingOut 
-                  ? 'text-gray-400 cursor-not-allowed' 
+                ${isLoggingOut
+                  ? 'text-gray-400 cursor-not-allowed'
                   : 'text-gray-600 hover:text-red-600'}`}
             >
               <FiLogOut className="text-xl" />

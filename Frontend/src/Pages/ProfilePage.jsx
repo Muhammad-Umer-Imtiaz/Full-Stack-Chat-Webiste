@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useAuthStore } from '../store/useAuthStore.js';
+import { useAuthStore } from '../Store/useAuthStore.js';
 import { useNavigate } from "react-router-dom";
 import { Camera, Loader2, KeyRound } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -50,7 +50,7 @@ const ProfilePage = () => {
 
   return (
     <div className="min-h-screen  pt-16  ">
-        <Navbar/>
+      <Navbar />
       <div className="max-w-3xl mx-auto">
         <div className=" rounded-3xl bg-white shadow-xl p-6 md:p-10">
           {/* Profile Header */}

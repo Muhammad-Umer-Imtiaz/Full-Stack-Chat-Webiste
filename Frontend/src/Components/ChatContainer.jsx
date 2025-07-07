@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useChatStore } from '../store/useChatStore.js';
+import { useChatStore } from '../Store/useChatStore.js';
 import ChatHeader from './ChatHeader';
 import MessageInput from './MessageInput';
 import MessageSkeleton from './sekelotons/MessageSkeleton.jsx';
-import { useAuthStore } from '../store/useAuthStore.js';
+import { useAuthStore } from '../Store/useAuthStore.js';
 import { ArrowDown } from 'lucide-react';
 
 const ChatContainer = () => {

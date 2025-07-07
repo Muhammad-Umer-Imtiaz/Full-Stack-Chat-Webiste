@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAuthStore } from '../store/useAuthStore';
+import { useAuthStore } from '../Store/useAuthStore';
 import { GoEyeClosed } from "react-icons/go";
 import { FiEye } from "react-icons/fi";
 import { Loader2 } from 'lucide-react';
@@ -45,7 +45,7 @@ const UpdatePassword = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center  p-4">
-            <Navbar/>
+            <Navbar />
             <div className="bg-white shadow-lg rounded-lg p-6 sm:p-8 w-full max-w-md">
                 <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6">
                     Update Password

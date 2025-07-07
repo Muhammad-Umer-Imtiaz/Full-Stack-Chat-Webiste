@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAuthStore } from '../store/useAuthStore';
+import { useAuthStore } from '../Store/useAuthStore';
 import { GoEyeClosed } from "react-icons/go";
 import { FiEye } from "react-icons/fi";
 import { Loader2 } from 'lucide-react';

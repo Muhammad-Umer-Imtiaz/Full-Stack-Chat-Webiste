@@ -22,10 +22,8 @@ export const useChatStore = create((set, get) => ({
         headers: { "Content-Type": "application/json" },
       });
 
-      console.log("Fetched users:", res.data);
       set({ users: res.data });
     } catch (error) {
-      console.log("Error fetching users:", error);
       toast.error(error.response?.data?.message || "Error fetching users");
     } finally {
       set({ isUsersLoading: false });
@@ -42,7 +40,6 @@ export const useChatStore = create((set, get) => ({
       });
       set({ messages: res.data });
     } catch (error) {
-      console.log("Error fetching messages:", error);
       toast.error(error.response?.data?.message || "Error fetching messages");
     } finally {
       set({ isMessageLoading: false });

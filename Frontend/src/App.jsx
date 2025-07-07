@@ -9,14 +9,12 @@ import ProfilePage from './Pages/ProfilePage'
 import { Loader } from "lucide-react"
 import { Toaster } from "react-hot-toast"
 import UpdatePassword from './Pages/UpdatePassword'
-import { useAuthStore } from './Store/useAuthStore'
+import { useAuthStore } from './tore/useAuthStore'
 const App = () => {
-  const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore()
-  console.log({ onlineUsers })
+  const { authUser, checkAuth, isCheckingAuth } = useAuthStore()
   useEffect(() => {
     checkAuth()
   }, [checkAuth])
-  console.log(authUser)
   if (isCheckingAuth && !authUser)
     return (<div className='flex items-center justify-center h-screen'>
       <Loader className='size-10 animate-spin' />

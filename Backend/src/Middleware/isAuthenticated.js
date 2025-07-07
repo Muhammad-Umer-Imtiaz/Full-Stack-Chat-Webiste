@@ -12,7 +12,7 @@ export const isAuthenticated = async (req, res, next) => {
     if (!user) return res.status(400).json({ message: "user Not Found" });
     req.user = user;
     next(); 
-  } catch (error) {
+  } catch (error) { 
     console.log(error);
   }
 };

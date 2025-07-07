@@ -1,35 +1,6 @@
-// import React from 'react';
-// import { useChatStore } from '../store/useChatStore';
-// import Sidebar from '../Components/Sidebar';
-// import NoChatSelected from '../Components/NoChatSelected';
-// import ChatContainer from '../Components/ChatContainer';
-// import Navbar from '../Components/Navbar';
-
-// const Home = () => {
-//   const { selectedUser } = useChatStore();
-
-//   return (
-//     <div className='h-screen'>
-//       <Navbar  />
-//       <div className="flex h-full  bg-gradient-to-br from-blue-50 to-blue-100 pt-20">
-//         <Sidebar />
-//         <div className="w-full ">
-//           {selectedUser ? (
-//             <ChatContainer />
-//           ) : (
-//             <NoChatSelected />
-//           )}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;
-
 
 import React, { useState } from 'react';
-import { useChatStore } from '../store/useChatStore';
+import { useChatStore } from '../Store/useChatStore';
 import Sidebar from '../Components/Sidebar';
 import NoChatSelected from '../Components/NoChatSelected';
 import ChatContainer from '../Components/ChatContainer';
@@ -54,7 +25,7 @@ const Home = () => {
       {/* Main Content */}
       <div className="flex-1 flex overflow-hidden relative pt-0">
         {/* Mobile Menu Button */}
-        <button 
+        <button
           onClick={toggleSidebar}
           className="lg:hidden fixed top-20 right-4 z-50 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600"
         >
@@ -62,7 +33,7 @@ const Home = () => {
         </button>
 
         {/* Sidebar */}
-        <div 
+        <div
           className={`
             fixed lg:relative
             lg:top-0 top-16 left-0 bottom-0
@@ -91,7 +62,7 @@ const Home = () => {
 
         {/* Overlay for mobile */}
         {isSidebarOpen && (
-          <div 
+          <div
             className="fixed inset-0 bg-black/50 lg:hidden z-30"
             onClick={toggleSidebar}
           />
