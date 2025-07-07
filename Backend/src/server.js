@@ -14,7 +14,7 @@ const __dirname = path.resolve();
 app.use(
   cors({
     origin: process.env.FrontendURL,
-    methods: ["GET", "POST", "PUT", "DELETE"], 
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
@@ -30,7 +30,7 @@ app.use("/api/v1/message", messageRoute);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../Frontend/build")));
-  app.get("*", (req, res) => {
+  app.get("/*splat", (req, res) => {
     res.sendFile(path.join(__dirname, "../Frontend/build/index.html"));
   });
 }
