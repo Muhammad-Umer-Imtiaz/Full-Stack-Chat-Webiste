@@ -9,7 +9,7 @@ import ProfilePage from './Pages/ProfilePage'
 import { Loader } from "lucide-react"
 import { Toaster } from "react-hot-toast"
 import UpdatePassword from './Pages/UpdatePassword'
-import { useAuthStore } from './tore/useAuthStore'
+import { useAuthStore } from './Store/useAuthStore'
 const App = () => {
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore()
   useEffect(() => {
