@@ -6,10 +6,10 @@ import Signup from './Pages/Signup'
 import Navbar from './Components/Navbar'
 import SettingsPage from './Pages/SettingPage'
 import ProfilePage from './Pages/ProfilePage'
-import { useAuthStore } from "../store/useAuthStore";
 import { Loader } from "lucide-react"
 import { Toaster } from "react-hot-toast"
 import UpdatePassword from './Pages/UpdatePassword'
+import { useAuthStore } from './store/useAuthStore'
 const App = () => {
   const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore()
   console.log({onlineUsers})
