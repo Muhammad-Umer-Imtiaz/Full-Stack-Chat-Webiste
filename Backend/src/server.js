@@ -29,11 +29,12 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/message", messageRoute);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../Frontend/build")));
-  app.get("/*splat", (req, res) => {
-    res.sendFile(path.join(__dirname, "../Frontend/build/index.html"));
+  app.use(express.static(path.join(__dirname, "../Frontend/dist")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../Frontend", "dist", "index.html"));
   });
 }
+
 
 server.listen(port, () => {
   console.log(`App listening at port ${port}`);
