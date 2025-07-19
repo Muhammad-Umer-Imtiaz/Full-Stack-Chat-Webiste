@@ -3,7 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { io } from "socket.io-client";
 
-const Base_URL =import.meta.env.MODE === "development" ?"http://localhost:3000" :"/api";
+const Base_URL ="https://backend-chatty.onrender.com"
 
 const jsonHeaders = {
   "Content-Type": "application/json",

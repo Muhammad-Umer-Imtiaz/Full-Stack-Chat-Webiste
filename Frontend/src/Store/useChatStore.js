@@ -3,8 +3,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useAuthStore } from "./useAuthStore";
 
-const Base_URL =
-  import.meta.env.MODE === "development" ? "http://localhost:3000" : "/api";
+const Base_URL = "https://backend-chatty.onrender.com";
 
 export const useChatStore = create((set, get) => ({
   messages: [],
