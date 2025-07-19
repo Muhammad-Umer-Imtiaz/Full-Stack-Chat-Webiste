@@ -6,10 +6,8 @@ import { dbConnection } from "./Database/dbConnection.js";
 import userRoute from "./router/userRoutes.js";
 import messageRoute from "./router/messageRoute.js";
 import { app, server } from "./utils/socket.js";
-import path from "path";
 
 dotenv.config();
-const __dirname = path.resolve();
 
 app.use(
   cors({
@@ -18,7 +16,9 @@ app.use(
     credentials: true,
   })
 );
-
+if (!process.env.FrontendURL) {
+  console.warn("Warning: FrontendURL not defined in .env");
+}
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ limit: "10mb", extended: true }));
 app.use(cookieParser());
@@ -27,13 +27,6 @@ const port = process.env.PORT || 7000;
 
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/message", messageRoute);
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../Frontend/dist")));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../Frontend", "dist", "index.html"));
-  });
-}
 
 
 server.listen(port, () => {
